@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: grey;
+        text-align: center;
+    }
+    .red{
+        color: red;
+    }
+    .green{
+        color: green;
+    }
+</style>
+<script>
+function hisubmit(){
+    let a=document.getElementById("txt1").value;
+    let i=0, x=0,y=0,b=0,c=0,g=0,h=0,error;
+   
+    for(i=0;i<a.length;i++)
+    {
+        error=0;
+        ch=a.charAt(i);
+        if(ch=="@")
+        {
+            g++
+        }
+        if(g<1||g>1)
+        {
+            document.getElementById("spantxt1").innerHTML="Error invalid email address ";
+            error=1;
+        }
+        if(ch==".")
+        {
+            h++;
+        }
+        if(h<1||h>1)
+        {
+            document.getElementById("spantxt1").innerHTML="Error invalid email address";   
+            error=1;
+        }
+    }
+    if(error==0)
+    {
+        document.getElementById("spanans").innerHTML="Done";
+    }
+}
+</script>
+<body>
+<div>
+<form>
+    <h1>Enter E-Mail</h1>
+    <input type="text" id="txt1" class="text" placeholder="Enter Name"><span id="spantxt1" class="red"></span>
+    <br><br>
+    <input type="button" id="btn1" class="button" value="Submit" onclick="hisubmit();">
+    <br><br>
+    <span id="spanans" class="green"></span>
+</form>
+</div>
+</body>
+</html>

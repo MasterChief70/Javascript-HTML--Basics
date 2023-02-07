@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+div
+{
+    text-align: center;
+    margin-bottom: 5px;
+}
+td{
+    background-color: rgba(250, 235, 215, 0.426);
+}
+</style>
+<script>
+    function answer()
+    {
+        let a = parseInt(document.getElementById("value1").value);
+        if(document.getElementById("radpos").checked)
+        {
+            if(a>0) {
+                document.getElementById("spananswer").innerHTML=(a + " Is Positive");
+            }
+            else if(a<0){
+                document.getElementById("spananswer").innerHTML=(a + " Is Negative");
+            }
+            else{
+                document.getElementById("spananswer").innerHTML=(a + " Is Zero");
+            }
+            
+        }
+
+        else if(document.getElementById("radodd").checked)
+        {
+            if(a%2==0){
+                document.getElementById("spananswer").innerHTML=(a + " Is Even");
+            }
+            else{
+                document.getElementById("spananswer").innerHTML=(a + " Is Odd");
+            }
+        }
+
+    }
+</script>
+<body>
+    <div class="main">
+        <form name="form1">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <div>
+                            <input type="text" name="number1" id="value1" placeholder="Enter Number 1 Here">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div>
+                            <input type="radio" class="btncheck" id="radpos" name="op"> Pos/Neg
+                        </div>
+                    </td>
+                    <td colspan="2">
+                        <div>
+                            <input type="radio" class="btncheck" id="radodd" name="op"> Odd/Even
+                        </div>
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div>
+                            <input type="button" class="btncheck" id="btnans" value="Click Me To Get Answer" onclick="answer();">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div>
+                            <span id="spananswer"></span>
+                        </div>
+                    </td>
+                </tr>
+        </table>
+        </form>
+    </div>
+</body>
+</html>

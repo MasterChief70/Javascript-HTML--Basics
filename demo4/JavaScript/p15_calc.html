@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function addition()
+    {
+        let a = parseInt(document.getElementById("value1").value);
+        let b = parseInt(document.getElementById("value2").value);
+        document.getElementById("spananswer").innerHTML=(a+b);
+    }
+    function subtraction()
+    {
+        let a = parseInt(document.getElementById("value1").value);
+        let b = parseInt(document.getElementById("value2").value);
+        document.getElementById("spananswer").innerHTML=(a-b)
+    }
+    function multiplication()
+    {
+        let a = parseInt(document.getElementById("value1").value);
+        let b = parseInt(document.getElementById("value2").value);
+        document.getElementById("spananswer").innerHTML=(a*b)
+    }
+    function division()
+    {
+        let a = parseInt(document.getElementById("value1").value);
+        let b = parseInt(document.getElementById("value2").value);
+        document.getElementById("spananswer").innerHTML=(a/b)
+    }
+</script>
+<body>
+    <div class="main">
+        <form name="form1">
+            <div>
+                <input type="text" name="number1" id="value1" placeholder="Enter Number 1 Here">
+            </div>
+            <div>
+                <input type="text" name="number2" id="value2" placeholder="Enter Number 2 Here">
+            </div>
+            <div>
+                <input type="radio" class="btncheck" id="add" value="Click me for Addition" onclick="addition();">
+            </div>
+            <div>
+                <input type="radio" class="btncheck" id="sub" value="Click me for subtraction" onclick="subtraction();">
+            </div>
+            <div>
+                <input type="radio" class="btncheck" id="mul" value="Click me for multiplication" onclick="multiplication();">
+            </div>
+            <div>
+                <input type="radio" class="btncheck" id="div" value="Click me for division" onclick="division();">
+            </div>
+            <div>
+                <span id="spananswer"></span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

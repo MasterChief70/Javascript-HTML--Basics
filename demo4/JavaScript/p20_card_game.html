@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" >
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+<style>
+    .deck .cards{
+        height: 3.7rem;
+        width: 3.7rem;
+        margin: 0.2rem 0.2rem;
+        background: #141214;;
+        font-size: 0;
+        color: #ffffff;
+        border-radius: 5px;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    }
+    .deck .cards:active{
+        transform: rotateY(0);
+        background: #02b3e4;
+        cursor: default;
+        animation-name: flipInY;
+        -webkit-backface-visibility: visible !important;
+        backface-visibility: visible !important;
+        animation-duration: .75s;
+    }
+    .deck{
+        text-align: center;
+        width: 85%;
+        background: #716F71;
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 0 3em;
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+<script>
+</script>
+<body>
+<h1>MEMORY GAME</h1>
+<div class="deck">
+<form name="form1">
+    <input type="button" class="cards" id="btn1" name="fa-anchor" onclick="hi1();">
+    <input type="button" class="cards" id="btn2" name="fa-anchor" onclick="hi2();">
+    <input type="button" class="cards" id="btn3" name="fa-bicycle" onclick="hi3();">
+    <input type="button" class="cards" id="btn4" name="fa-bicycle" onclick="hi4();">
+    <br><br>
+    <input type="button" class="cards" id="btn5" name="fa-bolt" onclick="hi5();">
+    <input type="button" class="cards" id="btn6" name="fa-bolt" onclick="hi6();">
+    <input type="button" class="cards" id="btn7" name="fa-bomb" onclick="hi7();">
+    <input type="button" class="cards" id="btn8" name="fa-bomb" onclick="hi8();">
+    <br><br>
+    <input type="button" class="cards" id="btn9" name="fa-paper-plane-o" onclick="hi9();">
+    <input type="button" class="cards" id="btn10" name="fa-paper-plane-o" onclick="hi10();">
+    <input type="button" class="cards" id="btn11" name="fa-cube" onclick="hi11();">
+    <input type="button" class="cards" id="btn12" name="fa-cube" onclick="hi12();">
+    <br><br>
+    <input type="button" class="cards" id="btn13" name="fa-diamond" onclick="hi13();">
+    <input type="button" class="cards" id="btn14" name="fa-diamond" onclick="hi14();">
+    <input type="button" class="cards" id="btn15" name="fa-leaf" onclick="hi15();">
+    <input type="button" class="cards" id="btn16" name="fa-leaf" onclick="hi16();">
+    <br><br>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+</style>
+<script>
+    function hiascii(){
+        let a=document.getElementById("txt1").value;
+        let i;
+        for(i=0;i<a.length;i++)
+        {
+            document.getElementById("txt2").value=a.charCodeAt(i);
+        }
+    }
+    function hiclear(){
+        document.getElementById("txt1").value="";
+        document.getElementById("txt2").value="";
+    }
+</script>
+<body>
+    <input type="text" id="txt1" class="txt" onkeypress="hiascii();" onfocus="hiclear();">
+    <br><br>
+    <input type="text" id="txt2" class="txt">
+    <br><br>
+</body>
+</html>

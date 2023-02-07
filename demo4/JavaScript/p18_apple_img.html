@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+div
+{
+    text-align: center;
+    margin-bottom: 5px;
+}
+td{
+    background-color: rgba(250, 235, 215, 0.432);
+}
+</style>
+<script>
+    function answer()
+    {
+        let a = parseInt(document.getElementById("value1").value);
+        let b = parseInt(document.getElementById("value2").value);
+        if(a>b){
+            document.getElementById("spananswer").innerHTML=("Apples are Costlier");
+            document.getElementById("img1").style.display='inline';
+            document.getElementById("img2").style.display='none';
+        }
+        else if(b>a){
+            document.getElementById("spananswer").innerHTML=("Bananas are Costlier");
+            document.getElementById("img1").style.display='none';
+            document.getElementById("img2").style.display='inline';
+
+        }
+        else{
+            document.getElementById("spananswer").innerHTML=("Both cost same");
+            document.getElementById("img1").style.display='inline';
+            document.getElementById("img2").style.display='inline';
+        }
+    }
+</script>
+<body>
+    <div class="main">
+        <form name="form1">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <div>
+                            <input type="text" name="number1" id="value1" placeholder="Enter Pricee of Apples">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div>
+                            <input type="text" name="number2" id="value2" placeholder="Enter Price of Bananas">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div>
+                            <input type="button" class="btncheck" id="btnans" value="Click Me To Get Answer" onclick="answer();">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div>
+                            <span id="spananswer"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div>
+                            <span id="spanimg"></span>
+                        </div>
+                    </td>
+                </tr>
+        </table>
+        </form>
+    </div>
+    <img src="img\apple.jpeg" height="100" width="200" id="img1" style="display: none">
+    <img src="img\bananas.jpeg" height="200" width="100" id="img2" style="display: none">
+</body>
+</html>

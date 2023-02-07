@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    .calculator{
+        text-align:center;
+    }
+    .btn_num, .btn_sign{
+        color: rgb(255, 255, 255);
+        background-color:dodgerblue;
+        border:0px;
+        width: 50px;
+        height: 30px;
+        margin: 2px;
+        font-family:'Courier New', Courier, monospace ;
+        font-size: larger;
+
+    }
+    #btn_clear{
+        width: 224px;
+        height: 35px;
+        background-color: dodgerblue;
+        color: white;
+        font-family:'Courier New', Courier, monospace ;
+        font-size: larger;
+    }
+    #txtanswer{
+        width: 224px;
+        height: 35px;
+        background-color: dodgerblue;
+        color: white;
+        font-family:'Courier New', Courier, monospace ;
+        font-size: larger;
+    }
+    h1{
+        text-align: center;
+        color: cyan;
+    }
+</style>
+<script>
+    let no1=0;
+    let op="";
+
+    function result(){
+
+        let no2=parseFloat(document.getElementById("txtanswer").value);
+        
+        if (op=="+")
+        {
+           document.getElementById("txtanswer").value=no1+no2;
+        }
+        else if (op=="-")
+        {
+           document.getElementById("txtanswer").value=no1-no2;
+        }
+        else if (op=="*")
+        {
+           document.getElementById("txtanswer").value=no1*no2;
+        }
+        else if (op=="/")
+        {
+           document.getElementById("txtanswer").value=no1/no2;
+        }
+
+
+    }
+
+    function hi7()
+    {
+        document.getElementById("txtanswer").value+="7";
+    }
+    function hi8()
+    {
+        document.getElementById("txtanswer").value+="8";
+    }
+    function hi9()
+    {
+        document.getElementById("txtanswer").value+="9";
+    }
+    function hi4()
+    {
+        document.getElementById("txtanswer").value+="4";
+    }
+    function hi5()
+    {
+        document.getElementById("txtanswer").value+="5";
+    }
+    function hi6()
+    {
+        document.getElementById("txtanswer").value+="6";
+    }
+    function hi1()
+    {
+        document.getElementById("txtanswer").value+="1";
+    }
+    function hi2()
+    {
+        document.getElementById("txtanswer").value+="2";
+    }
+    function hi3()
+    {
+        document.getElementById("txtanswer").value+="3";
+    }
+    function hi0()
+    {
+        document.getElementById("txtanswer").value+="0";
+    }
+    function hiplus()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        op="+";
+        document.getElementById("txtanswer").value="";
+    }
+    function himinus()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        op="-";
+        document.getElementById("txtanswer").value="";
+    }
+    function himultiply()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        op="*";
+        document.getElementById("txtanswer").value="";
+    }
+    function hidivide()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        op="/";
+        document.getElementById("txtanswer").value="";
+    }
+    function hipoint()
+    {
+        document.getElementById("txtanswer").value+=".";
+    }
+</script>
+<body>
+<h1>CALCULATOR</h1>
+<div class="calculator">
+    <form name="form1">
+        <input type="text" readonly id="txtanswer" name="ans">
+        <br><br>
+        <input type="button" class="btn_num" id="btn_seven" name="seven" value="7" onclick="hi7();">
+        <input type="button" class="btn_num" id="btn_eight" name="eight" value="8" onclick="hi8();">
+        <input type="button" class="btn_num" id="btn_nine" name="nine" value="9" onclick="hi9();">
+        <input type="button" class="btn_sign" id="btn_plus" name="plus" value="+" onclick="hiplus();">
+        <br><br>
+        <input type="button" class="btn_num" id="btn_four" name="four" value="4" onclick="hi4();">
+        <input type="button" class="btn_num" id="btn_five" name="five" value="5" onclick="hi5();">
+        <input type="button" class="btn_num" id="btn_six" name="six" value="6" onclick="hi6();">
+        <input type="button" class="btn_sign" id="btn_minus" name="minus" value="-" onclick="himinus();">
+        <br><br>
+        <input type="button" class="btn_num" id="btn_one" name="one" value="1" onclick="hi1();">
+        <input type="button" class="btn_num" id="btn_two" name="two" value="2" onclick="hi2();">
+        <input type="button" class="btn_num" id="btn_three" name="three" value="3" onclick="hi3();">
+        <input type="button" class="btn_sign" id="btn_multiply" name="multiply" value="*" onclick="himultiply();">
+        <br><br>
+        <input type="button"class="btn_sign" id="btn_divide" name="divide" value="/" onclick="divide();">
+        <input type="button" class="btn_num" id="btn_zero" name="zero" value="0" onclick="hi0();">
+        <input type="button" class="btn_sign" id="btn_point" name="point" value="." onclick="hipoint();">
+        <input type="button" class="btn_sign" id="btn_equal" name="equal" value="=" onclick="result();">
+        <br><br>
+        <input type="button" class="btn_clear" id="btn_clear" name="clear" value="Clear All" onclick="form1.ans.value='';">
+    </form>
+</div>
+</body>
+</html>

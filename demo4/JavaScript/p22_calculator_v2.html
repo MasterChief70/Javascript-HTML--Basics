@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .calculator{
+        text-align:center;
+    }
+    .btn_num, .btn_sign{
+        color: rgb(255, 255, 255);
+        background-color:dodgerblue;
+        width: 50px;
+        height: 30px;
+        margin: 2px;
+        font-family:'Courier New', Courier, monospace ;
+        font-size: larger;
+        border: 1px;
+        border-style:ridge;
+        border-color: white;
+    }
+    #btn_clear{
+        width: 224px;
+        height: 35px;
+        background-color: dodgerblue;
+        color: white;
+        font-family:'Courier New', Courier, monospace ;
+        font-size: larger;
+        border: 1px;
+        border-style:ridge;
+        border-color: white;
+    }
+    #txtanswer{
+        width: 224px;
+        height: 35px;
+        background-color: dodgerblue;
+        color: white;
+        font-family:'Courier New', Courier, monospace ;
+        font-size: larger;
+        border: 1px;
+        border-style:ridge;
+        border-color: white;
+        
+    }
+    #btn_equal{
+        color: rgb(255, 255, 255);
+        background-color:dodgerblue;
+        width: 50px;
+        height: 70px;
+        margin: 2px;
+        font-family:'Courier New', Courier, monospace ;
+        font-size: larger;
+        border: 1px;
+        border-style:ridge;
+        border-color: white;
+    }
+    h1{
+        text-align: center;
+        color: cyan;
+    }
+</style>
+<script>
+    let no1=0;
+    let op="";
+
+    function result(){
+
+        let no2=parseFloat(document.getElementById("txtanswer").value);
+        
+        if (op=="+")
+        {
+           document.getElementById("txtanswer").value=no1+no2;
+        }
+        else if (op=="-")
+        {
+           document.getElementById("txtanswer").value=no1-no2;
+        }
+        else if (op=="*")
+        {
+           document.getElementById("txtanswer").value=no1*no2;
+        }
+        else if (op=="/")
+        {
+           document.getElementById("txtanswer").value=no1/no2;
+        }
+
+
+    }
+
+    function hi7()
+    {
+        document.getElementById("txtanswer").value+="7";
+    }
+    function hi8()
+    {
+        document.getElementById("txtanswer").value+="8";
+    }
+    function hi9()
+    {
+        document.getElementById("txtanswer").value+="9";
+    }
+    function hi4()
+    {
+        document.getElementById("txtanswer").value+="4";
+    }
+    function hi5()
+    {
+        document.getElementById("txtanswer").value+="5";
+    }
+    function hi6()
+    {
+        document.getElementById("txtanswer").value+="6";
+    }
+    function hi1()
+    {
+        document.getElementById("txtanswer").value+="1";
+    }
+    function hi2()
+    {
+        document.getElementById("txtanswer").value+="2";
+    }
+    function hi3()
+    {
+        document.getElementById("txtanswer").value+="3";
+    }
+    function hi0()
+    {
+        document.getElementById("txtanswer").value+="0";
+    }
+    function hiplus()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        op="+";
+        document.getElementById("txtanswer").value="";
+    }
+    function himinus()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        op="-";
+        document.getElementById("txtanswer").value="";
+    }
+    function himultiply()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        op="*";
+        document.getElementById("txtanswer").value="";
+    }
+    function hidivide()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        op="/";
+        document.getElementById("txtanswer").value="";
+    }
+    function hipoint()
+    {
+        document.getElementById("txtanswer").value+=".";
+    }
+    function hiposneg()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        document.getElementById("txtanswer").value=no1*(-1);
+    }
+    function hionediv()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        document.getElementById("txtanswer").value=1/no1;
+    }
+    function hisqrt()
+    {
+        no1=parseFloat(document.getElementById("txtanswer").value);
+        document.getElementById("txtanswer").value=Math.sqrt(no1);
+    }
+</script>
+<body>
+<h1>CALCULATOR</h1>
+    <div class="calculator">
+        <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" readonly id="txtanswer" name="ans">
+                        <br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_seven" name="seven" value="7" onclick="hi7();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_eight" name="eight" value="8" onclick="hi8();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_nine" name="nine" value="9" onclick="hi9();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_sign" id="btn_plus" name="plus" value="+" onclick="hiplus();">
+                    </td>
+                        <br><br>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_four" name="four" value="4" onclick="hi4();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_five" name="five" value="5" onclick="hi5();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_six" name="six" value="6" onclick="hi6();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_sign" id="btn_minus" name="minus" value="-" onclick="himinus();">
+                    </td>
+                        <br><br>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_one" name="one" value="1" onclick="hi1();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_two" name="two" value="2" onclick="hi2();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_three" name="three" value="3" onclick="hi3();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_sign" id="btn_multiply" name="multiply" value="*" onclick="himultiply();">
+                    </td>
+                        <br><br>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button"class="btn_sign" id="btn_divide" name="divide" value="/" onclick="divide();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_num" id="btn_zero" name="zero" value="0" onclick="hi0();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_sign" id="btn_point" name="point" value="." onclick="hipoint();">
+                    </td>
+                    <td rowspan="2">
+                        <input type="button" class="btn_sign" id="btn_equal" name="equal" value="=" onclick="result();">
+                    </td>
+                        <br><br>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button"class="btn_sign" id="btn_posneg" name="posneg" value="+/-" onclick="hiposneg();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_sign" id="btn_onediv" name="onediv" value="1/" onclick="hionediv();">
+                    </td>
+                    <td>
+                        <input type="button" class="btn_sign" id="btn_sqrt" name="sqrt" value="Sqrt" onclick="hisqrt();">
+                    </td>
+                        <br><br>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <input type="button" class="btn_clear" id="btn_clear" name="clear" value="Clear All" onclick="form1.ans.value='';">
+                    </td>
+                </tr>       
+        </table>
+    </div>
+</body>
+</html>

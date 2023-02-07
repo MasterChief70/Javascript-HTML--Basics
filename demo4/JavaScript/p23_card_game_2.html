@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    .deck{
+        text-align: center;
+        background-color: rgb(58, 58, 58);
+        cursor: pointer;
+    }
+    .deck .card{
+        margin: 5px;
+    }
+    h1{
+        text-align: center;
+        color: dodgerblue;
+    }
+    .btn{
+        height: 25px;
+        width: 75px;
+        text-align: center;
+        color:aqua;
+        background-color: white;
+        border-color: aqua;
+        border-radius: 3px;
+    }
+</style>
+<script>
+    
+    let p1=0,p2=0,c1=0,c2=0,b1=0,b2=0,x1=0,x2=0,z1=0,z2=0,n1=0,n2=0;
+
+    function hi1(){
+        document.images[0].src="img/card1.jpg";
+        p1=1;
+    }
+    function hi2(){
+        document.images[1].src="img/card2.jpg";
+        c1=1;
+    }
+    function hi3(){
+        document.images[2].src="img/card3.jpg";
+        b1=1;
+    }
+    function hi4(){
+        document.images[3].src="img/card4.jpg";
+        x1=1;
+    }
+    function hi5(){
+        document.images[4].src="img/card5.jpg";
+        z1=1;
+    }
+    function hi6(){
+        document.images[5].src="img/card6.jpg";
+        n1=1;
+    }
+    function hi7(){
+        document.images[6].src="img/card1.jpg";
+        p2=1;
+    }
+    function hi8(){
+        document.images[7].src="img/card2.jpg";
+        c2=1;
+    }
+    function hi9(){
+        document.images[8].src="img/card3.jpg";
+        b2=1;
+    }
+    function hi10(){
+        document.images[9].src="img/card4.jpg";
+        x2=1;
+    }
+    function hi11(){
+        document.images[10].src="img/card5.jpg";
+        z2=1;
+    }
+    function hi12(){
+        document.images[11].src="img/card6.jpg";
+        n2=1
+    }
+
+    function hiresetall()
+    {
+        for(i=0;i<12;i++)
+        {
+        document.images[i].src="img/cardback.jpeg";
+        document.images[i].style.display='inline';
+        }
+        p1=0,p2=0,c1=0,c2=0,b1=0,b2=0,x1=0,x2=0,z1=0,z2=0,n1=0,n2=0;
+    }
+
+    function checkall()
+    {
+        let c;
+        if(p1==p2 && p1==1)
+        {
+            document.images[0].src="img/card1.jpg";
+            document.images[6].src="img/card1.jpg";
+            document.images[0].style.display='none';
+            document.images[6].style.display='none';
+            c=0;
+        }
+        else
+        {
+            c=1;
+        }
+        if(c1==c2 && c1==1)
+        {
+            document.images[1].src="img/card2.jpg";
+            document.images[7].src="img/card2.jpg";
+            document.images[1].style.display='none';
+            document.images[7].style.display='none';
+            c=0;
+        }
+        else
+        {
+            c=1;
+        }
+        if(b1==b2 && b1==1)
+        {
+            document.images[2].src="img/card3.jpg";
+            document.images[8].src="img/card3.jpg";
+            document.images[2].style.display='none';
+            document.images[8].style.display='none';
+            c=0;
+        }
+        else
+        {
+            c=1;
+        }
+        if(x1==x2 && x1==1)
+        {
+            document.images[3].src="img/card4.jpg";
+            document.images[9].src="img/card4.jpg";
+            document.images[3].style.display='none';
+            document.images[9].style.display='none';
+            c=0;
+        }
+        else
+        {
+            c=1;
+        }
+        if(z1==z2 && z1==1)
+        {
+            document.images[4].src="img/card5.jpg";
+            document.images[10].src="img/card5.jpg";
+            document.images[4].style.display='none';
+            document.images[10].style.display='none';
+            c=0;
+        }
+        else
+        {
+            c=1;
+        }
+        if(n1==n2 && n1==1)
+        {
+            document.images[5].src="img/card6.jpg";
+            document.images[11].src="img/card6.jpg";
+            document.images[5].style.display='none';
+            document.images[11].style.display='none';
+            c=0;
+        }
+        else
+        {
+            c=1;
+        }
+        if(c==1)
+        {
+            for(i=0;i<12;i++)
+
+            p1=0,p2=0,c1=0,c2=0,b1=0,b2=0,x1=0,x2=0,z1=0,z2=0,n1=0,n2=0;
+        }
+    }
+</script>
+<body>
+    <h1>MEMORY CARDS GAME</h1>
+    <div class="deck">
+        <form name="form1">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img1" class="card" onclick="hi1();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img2" class="card" onclick="hi2();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img3" class="card" onclick="hi3();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img4" class="card" onclick="hi4();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img5" class="card" onclick="hi5();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img6" class="card" onclick="hi6();">
+            <br><br>
+            <img src="img\cardback.jpeg" height="100" width="75" id="img7" class="card" onclick="hi7();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img8" class="card" onclick="hi8();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img9" class="card" onclick="hi9();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img10" class="card" onclick="hi10();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img11" class="card" onclick="hi11();">
+            <img src="img\cardback.jpeg" height="100" width="75" id="img12" class="card" onclick="hi12();">
+            <br><br>
+            <input type="button" class="btn" id="btn1" value="Match" onclick="checkall();">
+            <input type="button" class="btn" id="btn2" value="Reset" onclick="hiresetall();">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(0, 0, 0);
+    }
+    .text{
+        width: 575px;
+        text-align: center;
+        background-color: grey;
+        color: white;
+        border: 0px;
+    }
+    h5, .box{
+        color: white;
+    }
+</style>
+<script>
+    function check(){
+        let a,b,c,d;
+        if(document.getElementById("box1").checked)
+        {
+            document.getElementById("img1").style.display='inline';
+            a="Card1   ";
+        }
+        else
+        {
+            document.getElementById("img1").style.display='none';
+            a="";
+        }
+        if(document.getElementById("box2").checked)
+        {
+            document.getElementById("img2").style.display='inline';
+            b="Card2   ";
+        }
+        else
+        {
+            document.getElementById("img2").style.display='none';
+            b="";
+        }
+        if(document.getElementById("box3").checked)
+        {
+            document.getElementById("img3").style.display='inline';
+            c="Card3   ";
+        }
+        else
+        {
+            document.getElementById("img3").style.display='none';
+            c="";
+        }
+        if(document.getElementById("box4").checked)
+        {
+            document.getElementById("img4").style.display='inline';
+            d="Card4   ";
+        }
+        else
+        {
+            document.getElementById("img4").style.display='none';
+            d="";
+        }
+        document.getElementById("text1").value=(a +   b +   c +  d);
+    }
+</script>
+<body>
+<div class="cards">
+<form name="form1"> 
+<table align="center">
+    <tr>
+        <td>
+        <input type="checkbox" id="box1" class="box" onclick="check();"><h5>Check For Card 1</h5>
+        </td>
+        <td>
+        <input type="checkbox" id="box2" class="box" onclick="check();"><h5>Check For Card 2</h5>
+        </td>
+        <td>
+        <input type="checkbox" id="box3" class="box" onclick="check();"><h5>Check For Card 3</h5>
+        </td>
+        <td>
+        <input type="checkbox" id="box4" class="box" onclick="check();"><h5>Check For Card 4</h5>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <img src="img\card1.jpg" id="img1" height="100" width="75" style="display: none;">
+        </td>
+        <td>
+        <img src="img\card2.jpg" id="img2" height="100" width="75" style="display: none;">
+        </td>
+        <td>
+        <img src="img\card3.jpg" id="img3" height="100" width="75" style="display: none;">
+        </td>
+        <td>
+        <img src="img\card4.jpg" id="img4" height="100" width="75" style="display: none;">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <input type="text" id="text1" class="text" readonly>
+        </td>
+    </tr>
+</table>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+</style>
+<script>
+    function hiascii(){
+        let a=document.getElementById("txt1").value;
+        let i;
+        for(i=0;i<a.length;i++)
+        {
+            let ch=a.charCodeAt(i);
+            let cc=a.charAt(i);
+            if(ch>=65 && ch<=90)
+            {
+                document.getElementById("txt2").value+=cc;
+            }
+            if(ch>=97 && ch<=122)
+            {
+                document.getElementById("txt3").value+=cc;
+            }
+            if(ch>=48 && ch<=57)
+            {
+                document.getElementById("txt4").value+=cc;
+            }
+        }
+    }
+    function hiclear(){
+        document.getElementById("txt1").value="";
+        document.getElementById("txt2").value="";
+        document.getElementById("txt3").value="";
+        document.getElementById("txt4").value="";
+    }
+</script>
+<body>
+    <input type="text" id="txt1" class="txt" onkeypress="return hiascii(event);" onfocus="hiclear();">
+    <br><br>
+    <input type="text" id="txt2" class="txt" placeholder="Upper" readonly>
+    <br><br>
+    <input type="text" id="txt3" class="txt" placeholder="Lower" readonly>
+    <br><br>
+    <input type="text" id="txt4" class="txt" placeholder="Number" readonly>
+
+</body>
+</html>

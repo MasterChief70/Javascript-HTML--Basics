@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock-Paper-Scissors</title>
+  </head>
+  <body>
+    <h1>Rock-Paper-Scissors</h1>
+    <p>
+      Score: W - <span id="wins">0</span>   L - <span id="losses">0</span>   T - <span id="ties">0</span>
+    </p>
+    <p id="result"></p>
+    <button onclick="playRound('rock')">Rock</button>
+    <button onclick="playRound('paper')">Paper</button>
+    <button onclick="playRound('scissors')">Scissors</button>
+    <button onclick="resetGame()">Reset</button>
+    <script>
+      let wins = 0;
+      let losses = 0;
+      let ties = 0;
+
+      function playRound(playerChoice) {
+        let computerChoice;
+        let randomNumber = Math.random();
+        if (randomNumber < 0.33) {
+          computerChoice = "rock";
+        } else if (randomNumber < 0.66) {
+          computerChoice = "paper"; 
+        } else {
+          computerChoice = "scissors";
+        }
+        if (playerChoice === computerChoice) {
+          document.getElementById("result").innerHTML = "It's a tie! You both chose " + playerChoice + ".";
+          ties++;
+        } else if (playerChoice === "rock" && computerChoice === "scissors") {
+          document.getElementById("result").innerHTML = "You win! Rock beats scissors.";
+          wins++;
+        } else if (playerChoice === "scissors" && computerChoice === "paper") {
+          document.getElementById("result").innerHTML = "You win! Scissors beats paper.";
+          wins++;
+        } else if (playerChoice === "paper" && computerChoice === "rock") {
+          document.getElementById("result").innerHTML = "You win! Paper beats rock.";
+          wins++;
+        } else {
+          document.getElementById("result").innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
+          losses++;
+        }
+        updateScore();
+      }
+
+      function updateScore() {
+        document.getElementById("wins").innerHTML = wins;
+        document.getElementById("losses").innerHTML = losses;
+        document.getElementById("ties").innerHTML = ties;
+      }
+
+      function resetGame() {
+        wins = 0;
+        losses = 0;
+        ties = 0;
+        updateScore();
+        document.getElementById("result").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

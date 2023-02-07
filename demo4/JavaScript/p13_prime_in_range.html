@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+function checkresult()
+{
+    let ans="";
+    let a=parseInt(document.getElementById("limit").value);
+    for(i=2;i<a;i++)
+    {
+        let x=1;
+        for(j=2;j<i;j++)
+        {
+            if(i%j==0)
+            {
+                x=0;
+            }
+        }
+        if(x==1)
+        {
+            ans+=i + " ";
+        }
+    }
+    document.getElementById("spananswer").innerHtml="<h1>"+ans+"</h1>";
+}
+</script>
+<body>
+    <div class="main">
+        <form name="form1">
+            <div>
+                <input type="text" name="range" id="limit" placeholder="Enter Number Here">
+            </div>
+            <div>
+                <input type="button" class="btncheck" id="btn" value="Click me" onclick="checkresult();">
+            </div>
+            <div>
+                <span id="spananswer"></span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

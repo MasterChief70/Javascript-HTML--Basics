@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock-Paper-Scissors</title>
+    <style>
+        body{
+            text-align: center;
+            align-items: center;
+        }
+        table{
+            margin: 0 auto;
+        }
+      img {
+        height: 150px;
+        width: 112.5px;
+        border: 5px;
+        cursor: pointer;
+      }
+      .choices {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+      }
+      #result {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        background-color: #00b4d8;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #00a2c7;
+      }
+    </style>
+  </head>
+  <body>
+    <table align="center">
+        <tr>
+          <td colspan="3">
+            <h1>Rock-Paper-Scissors</h1>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            Score: Player - <span id="wins">0</span>  Computer - <span id="losses">0</span>  Tie - <span id="ties">0</span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <p id="result"></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="img\rock.png" id="img1" class="image" alt="Rock" onclick="playRound('rock')" />
+          </td>
+          <td>
+            <img src="img\paper.png" id="img2" class="image" alt="Paper" onclick="playRound('paper')" />
+          </td>
+          <td>
+            <img src="img\scissors.png" id="img3" class="image" alt="Scissors" onclick="playRound('scissors')" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <button id="btn1" class="button" onclick="resetGame()">Reset</button>
+          </td>
+        </tr>
+      </table>
+  
+    <script>
+      let wins = 0;
+      let losses = 0;
+      let ties = 0;
+
+      function playRound(playerChoice) {
+        let computerChoice;
+        let randomNumber = Math.random();
+        if (randomNumber < 0.33) {
+          computerChoice = "rock";
+        } else if (randomNumber < 0.66) {
+          computerChoice = "paper";
+        } else {
+          computerChoice = "scissors";
+        }
+        if (playerChoice === computerChoice) {
+          document.getElementById("result").innerHTML = "It's a tie! You both chose " + playerChoice + ".";
+          ties++;
+        } else if (playerChoice === "rock" && computerChoice === "scissors") {
+          document.getElementById("result").innerHTML = "You win! Rock beats scissors.";
+          wins++;
+        } else if (playerChoice === "scissors" && computerChoice === "paper") {
+          document.getElementById("result").innerHTML = "You win! Scissors beats paper.";
+          wins++;
+        } else if (playerChoice === "paper" && computerChoice === "rock") {
+          document.getElementById("result").innerHTML = "You win! Paper beats rock.";
+          wins++;
+        } else {
+          document.getElementById("result").innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
+          losses++;
+        }
+        updateScore();
+      }
+
+      function updateScore() {
+        document.getElementById("wins").innerHTML = wins;
+        document.getElementById("losses").innerHTML = losses;
+        document.getElementById("ties").innerHTML = ties;
+      }
+
+      function resetGame() {
+        wins = 0;
+        losses = 0;
+        ties = 0;
+        updateScore();
+        document.getElementById("result").innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

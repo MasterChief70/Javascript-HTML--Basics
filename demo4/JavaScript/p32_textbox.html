@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+</style>
+<script>
+    function check(){
+        let a=document.getElementById("txt1").value;
+        let b=document.getElementById("txt2").value;
+        let c=document.getElementById("txt3").value;
+        let d=0,f=0;
+        let e=document.getElementById("select1").value;
+        if(document.getElementById("chck1").checked||document.getElementById("chck2").checked||document.getElementById("chck3").checked||document.getElementById("chck4").checked)
+        {
+            d=1;
+        }
+        if(document.getElementById("rad1").checked||document.getElementById("rad2").checked||document.getElementById("rad3").checked)
+        {
+            f=1;
+        }
+        if(a==""||b==""||c=="")
+        {                                                                           
+            alert("Field can't be empty");
+        }
+        else if(b!=c)
+        {
+            alert("Passwords dont match");
+        }
+        else if(d==0)
+        {
+            alert("select your hobbies");
+        }
+        else if(e=="a")
+        {
+            alert("Select your city")
+        }
+        else if(f==0)
+        {
+            alert("Select your gender")
+        }
+        else
+        {
+            alert("Done");
+        }
+    }
+</script>
+<body>
+    <input type="text" id="txt1" class="txtbox" placeholder="Enter Username">
+    <br><br>
+    <input type="password" id="txt2" class="txtbox" placeholder="Enter Password">
+    <br><br>
+    <input type="password" id="txt3" class="txtbox" placeholder="Re-Enter Password">
+    <br><br>
+    Hobby : 
+    <input type="checkbox" id="chck1" class="checkbox" name="hobby">Cricket
+    <input type="checkbox" id="chck2" class="checkbox" name="hobby">Football
+    <input type="checkbox" id="chck3" class="checkbox" name="hobby">Guitar
+    <input type="checkbox" id="chck4" class="checkbox" name="hobby">Writing
+    <br><br>
+        <div class="dropmenu1">
+        City : 
+        <select id="select1">
+            <option id="option0" value="a">Select City</option>            
+            <option id="option1" value="b">Ahmedabad</option>
+            <option id="option2" value="c">Mumbai</option>
+            <option id="option3" value="d">Pune</option>
+            <option id="option4" value="e">Bangalore</option>
+        </select>
+        </div>
+    <br>
+    Gender : 
+    <input type="radio" id="rad1" name="gender">Male
+    <input type="radio" id="rad2" name="gender">Female
+    <input type="radio" id="rad3" name="gender">Other
+    <br><br>
+    <input type="button" id="btn1" class="btn" value="Submit" onclick="check();">
+</body>
+</html>
